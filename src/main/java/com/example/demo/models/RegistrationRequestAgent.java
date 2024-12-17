@@ -5,7 +5,7 @@ import jakarta.persistence.*;
 
 @Entity
 @Table(name = "registration_requests")
-public class RegistrationRequest {
+public class RegistrationRequestAgent {
     
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
