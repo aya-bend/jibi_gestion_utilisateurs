@@ -7,13 +7,13 @@ import org.springframework.stereotype.Service;
 
 import com.example.demo.models.RegistrationRequestAgent;
 import com.example.demo.models.RegistrationStatus;
-import com.example.demo.repository.RegistrationRequestRepository;
+import com.example.demo.repository.RegistrationRequestAgentRepository;
 
 @Service
-public class RegistrationRequestService {
+public class RegistrationRequestAgentService {
 
     @Autowired
-    private RegistrationRequestRepository requestRepository;
+    private RegistrationRequestAgentRepository requestRepository;
 
     // Méthode pour récupérer les demandes avec statut PENDING
     public List<RegistrationRequestAgent> getPendingRequests() {
