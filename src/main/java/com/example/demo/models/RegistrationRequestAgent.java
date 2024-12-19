@@ -2,9 +2,11 @@ package com.example.demo.models;
 
 import jakarta.persistence.*;
 
+import java.time.LocalDate;
+
 
 @Entity
-@Table(name = "registration_requests")
+@Table(name = "registration_requests_Agents")
 public class RegistrationRequestAgent {
     
     @Id
@@ -13,17 +15,55 @@ public class RegistrationRequestAgent {
 
     private String firstName;
     private String lastName;
-    private String idType;
-    private String idNumber;
     private String email;
     private String phone;
+    private String password;
+    private String idType;
+    private String idNumber;
+    @Lob
+    @Column(name = "id_document", columnDefinition = "BLOB")
+    private byte[] idDocument;
+
+    private LocalDate birthDate;
+
+    public LocalDate getBirthDate() {
+        return birthDate;
+    }
+
+    public void setBirthDate(LocalDate birthDate) {
+        this.birthDate = birthDate;
+    }
+
+    public String getAddress() {
+        return address;
+    }
+
+    public void setAddress(String address) {
+        this.address = address;
+    }
+
+    private String address;
     private String immatriculation;
     private String patentNumber;
     @Enumerated(EnumType.STRING) // Pour stocker l'Enum en format texte dans la DB
     private RegistrationStatus status = RegistrationStatus.PENDING; // Par défaut "PENDING"
 
 
+    public String getPassword() {
+        return password;
+    }
 
+    public void setPassword(String password) {
+        this.password = password;
+    }
+
+    public byte[] getIdDocument() {
+        return idDocument;
+    }
+
+    public void setIdDocument(byte[] idDocument) {
+        this.idDocument = idDocument;
+    }
 
     // Getters et Setters
     public Long getId() { return id; }

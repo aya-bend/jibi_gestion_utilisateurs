@@ -20,7 +20,7 @@ public class Agent extends User {
     @Column(name = "id_document", columnDefinition = "BLOB")
     private byte[] idDocument;
 
-    @Column(nullable = true)
+    @Column(nullable = false)
     private LocalDate birthDate;
 
     @Column(nullable = false)
