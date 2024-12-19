@@ -3,9 +3,10 @@ package com.example.demo.models;
 
 import jakarta.persistence.*;
 import java.time.LocalDateTime;
+
 @Entity
 @Table(name = "AgentsDeleted")
-@PrimaryKeyJoinColumn(name = "id")
+
 public class AgentDeleted extends Agent {
 
     @Column(nullable = false)

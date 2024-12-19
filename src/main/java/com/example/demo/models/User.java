@@ -2,12 +2,14 @@ package com.example.demo.models;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.*;
 
-@MappedSuperclass
+@Entity
+@Table(name = "users")
+@Inheritance(strategy = InheritanceType.JOINED)
 public class User {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private String id;
+    private Long id;
 
     @NotBlank
     @Size(max = 50)
@@ -17,6 +19,7 @@ public class User {
     @Size(max = 50)
     private String lastName;
 
+    @NotBlank
     @Email
     private String email;
 
@@ -26,11 +29,12 @@ public class User {
     @NotBlank
     private String password; //genereted
 
-    public String getId() {
+    // Getters et Setters
+    public Long getId() {
         return id;
     }
 
-    public void setId(String id) {
+    public void setId(Long id) {
         this.id = id;
     }
 

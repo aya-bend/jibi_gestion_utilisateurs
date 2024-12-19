@@ -6,7 +6,7 @@ import java.time.LocalDate;
 
 @Entity
 @Table(name = "Agents")
-@PrimaryKeyJoinColumn(name = "id")
+@Inheritance(strategy = InheritanceType.JOINED)// Spécifie que Agent est une entité héritée
 public class Agent extends User {
 
 
