@@ -29,6 +29,20 @@ public class User {
     @NotBlank
     private String password; //genereted
 
+
+    // Constructeur par défaut
+    public User() {
+     }
+
+    // Constructeur qui accepte les cinq paramètres nécessaires
+    public User(String firstName, String lastName, String email, String phone, String password) {
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.email = email;
+        this.phone = phone;
+        this.password = password;
+    }
+
     // Getters et Setters
     public Long getId() {
         return id;

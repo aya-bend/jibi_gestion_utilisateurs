@@ -54,9 +54,16 @@ public class RegistrationRequestClient {
 
     public String getIncomeProof() { return incomeProof; }
     public void setIncomeProof(String incomeProof) { this.incomeProof = incomeProof; }
+
+    // Getter et Setter pour status
+    public RegistrationStatus getStatus() {
+        return status;
+    }
+
+    public void setStatus(RegistrationStatus status) {
+        this.status = status;
+    }
 }
 
-enum ClientType {
-    HSSAB1, HSSAB2, HSSAB3;
-}
+
 
