@@ -15,6 +15,8 @@ public class RegistrationRequestAgent {
     private String lastName;
     private String idType;
     private String idNumber;
+    @Lob
+    private byte[] idDocument;
     private String email;
     private String phone;
     private String immatriculation;
@@ -40,6 +42,14 @@ public class RegistrationRequestAgent {
 
     public String getIdNumber() { return idNumber; }
     public void setIdNumber(String idNumber) { this.idNumber = idNumber; }
+
+    public byte[] getIdDocument() {
+        return idDocument;
+    }
+
+    public void setIdDocument(byte[] idDocument) {
+        this.idDocument = idDocument;
+    }
 
     public String getEmail() { return email; }
     public void setEmail(String email) { this.email = email; }

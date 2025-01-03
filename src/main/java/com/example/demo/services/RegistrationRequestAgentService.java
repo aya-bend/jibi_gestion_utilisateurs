@@ -25,4 +25,14 @@ public class RegistrationRequestAgentService {
         // Le statut est déjà initialisé par défaut à "PENDING" dans l'entité
         return requestRepository.save(request);
     }
+
+    // Méthode pour rejeter une demande
+    public RegistrationRequestAgent rejectRequest(Long requestId) {
+        RegistrationRequestAgent request = requestRepository.findById(requestId)
+            .orElseThrow(() -> new RuntimeException("Request not found with id: " + requestId));
+        
+        // Mettre à jour le statut
+        request.setStatus(RegistrationStatus.REJECTED);
+        return requestRepository.save(request);
+    }
 }
